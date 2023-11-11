@@ -7,6 +7,8 @@ import { HttpExceptionFilter } from 'libs/HttpExceptionFilter';
 
 import { Config } from 'src/Config';
 import { AppModule } from 'src/AppModule';
+import helmet from 'helmet';
+import compression from 'compression';
 
 function setupSwagger(app: INestApplication): void {
   const documentBuilder = new DocumentBuilder()
@@ -18,12 +20,15 @@ function setupSwagger(app: INestApplication): void {
 
   const document = SwaggerModule.createDocument(app, documentBuilder);
   SwaggerModule.setup('api', app, document, {
-    swaggerOptions: { defaultModelsExpandDepth: -1 }
+    swaggerOptions: { defaultModelsExpandDepth: -1 },
   });
 }
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
+  app.use(helmet());
+  app.use(compression());
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new LoggingInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());

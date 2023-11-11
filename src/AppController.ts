@@ -7,13 +7,13 @@ export class AppController {
   @ApiOkResponse()
   @Get('health')
   health(): void {
-
+    return;
   }
 
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiNoContentResponse()
   @Get('favicon.io')
   favicon(): void {
-
+    return;
   }
 }
