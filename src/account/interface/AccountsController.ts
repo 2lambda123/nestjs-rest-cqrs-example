@@ -40,7 +40,7 @@ import { DeleteAccountRequestParam } from 'src/account/interface/dto/DeleteAccou
 import { FindAccountByIdRequestParam } from 'src/account/interface/dto/FindAccountByIdRequestParam';
 import { FindAccountByIdResponseDTO } from 'src/account/interface/dto/FindAccountByIdResponseDTO';
 import { FindAccountsResponseDto } from 'src/account/interface/dto/FindAccountsResponseDto';
-import { ResponseDescription } from 'src/account/interface/ResponseDescription';
+
 
 import { CloseAccountCommand } from 'src/account/application/command/CloseAccountCommand';
 import { DepositCommand } from 'src/account/application/command/DepositCommand';
