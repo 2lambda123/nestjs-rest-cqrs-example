@@ -51,7 +51,7 @@ import { FindAccountByIdQuery } from 'src/account/application/query/FindAccountB
 import { FindAccountsQuery } from 'src/account/application/query/FindAccountsQuery';
 import { RemitCommand } from 'src/account/application/command/RemitCommand';
 
-import { ErrorMessage } from 'src/account/domain/ErrorMessage';
+import { ErrorMessage } from 'src/account/interface/ErrorMessage';
 
 @ApiTags('Accounts')
 @Controller()
